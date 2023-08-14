@@ -23,9 +23,9 @@ int main() {
   const uint audio_slice = pwm_gpio_to_slice_num(AUDIO_PIN);
   static pwm_config audio_pwm_config = pwm_get_default_config();
   pwm_init(audio_slice, &audio_pwm_config, true);
-  pwm_set_wrap(audio_slice, 1u << 8);
+  pwm_set_wrap(audio_slice, 1u << 12);
   const uint audio_pwm_channel = pwm_gpio_to_channel(AUDIO_PIN);
-  pwm_set_chan_level(audio_slice, audio_pwm_channel, 1u << 7);
+  pwm_set_chan_level(audio_slice, audio_pwm_channel, 1u << 11);
   audio_dma_channel = dma_claim_unused_channel(true);
   const int audio_dma_timer = dma_claim_unused_timer(true);
   static dma_channel_config audio_dma_config = dma_channel_get_default_config(audio_dma_channel);
