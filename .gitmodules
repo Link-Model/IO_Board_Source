@@ -1,3 +1,6 @@
 [submodule "common_libs"]
 	path = common_libs
 	url = git@github.com:Link-Model/common_libs.git
+[submodule "Audio"]
+	path = Sounds
+	url = git@github.com:Link-Model/Sounds.git
